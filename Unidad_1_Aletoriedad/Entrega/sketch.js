@@ -13,7 +13,7 @@ function draw() {
         stroke(255);
         beginShape();
         for (let i = height; i > height/2; i--) {
-            strokeWeight(map(i,height,height/2,2,25))
+            strokeWeight(map(i,height/2,height,2,25))
             let x = noise(yoff) * width/8 + width/2;
             yoff += 0.01;
             vertex(x, i);
