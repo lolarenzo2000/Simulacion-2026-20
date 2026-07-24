@@ -2,8 +2,13 @@
 let t = 0.0;
 let speed = 0.01;
 
+let leafTypes = [];
+
+function makeLeaf(x, y, type) {
+  return { x, y, type };
+}
+
 let leafs = [];
- 
 // how tall the plant currently is (starts at 0, grows toward maxGrowth)
 let growth = 0;
 let maxGrowth;
@@ -12,14 +17,18 @@ let growRate = 0.6;
 // thickness at the base vs the tip
 let baseWeight = 30;
 let tipWeight = 2;
- 
 
+let leafMedianInterval = 160;
+let leafIntervalCounter = 0;
+ 
+let imageBaseWidth = 64;
+let imageBaseHeight = 120;
 
 function preload(){
-    leafs[1] = loadImage('assets/leaf1.png');
-    leafs[2] = loadImage('assets/leaf2.png');
-    leafs[3] = loadImage('assets/leaf3.png');
-    leafs[4] = loadImage('assets/leaf4.png');
+    leafTypes[0] = loadImage('assets/leaf1.png');
+    leafTypes[1] = loadImage('assets/leaf2.png');
+    leafTypes[2] = loadImage('assets/leaf3.png');
+    leafTypes[3] = loadImage('assets/leaf4.png');
 }
 
 function setup() {
@@ -31,30 +40,58 @@ function setup() {
 function draw() {
     background(0);
     
-    tint(255,255,255);
-    image(leafs[1],width/2,height/2,500,500);
-    noTint();
+    
+    
     let yoff = t;
     
     // seed the anchor from the noise curve itself, not a hardcoded point
-    let prevX = noise(yoff) * width / 8 + width / 2;
+    let prevX = noise(yoff) * width / 8;
     let prevY = height;
 
     for (let i = height; i > maxGrowth; i--) {
-      let x = noise(yoff) * width / 8 + width / 2;
+      let x = noise(yoff) * width / 8 + width/4;
       yoff += 0.01;
 
       // how far up the FULL grown plant this point is (0 = base, 1 = tip)
       let frac = (height - i) / (height - maxGrowth);
       let w = lerp(baseWeight, tipWeight, frac);
 
-      stroke(color(map(w,2,20,150,20),map(w,2,20,255,80),map(w,2,20,100,20)));
+      let red = map(w,2,20,150,20)
+      let green = map(w,2,20,255,80)
+      let blue = map(w,2,20,100,20)
+
+      stroke(color(red,green,blue))
       strokeWeight(w);
       line(prevX, prevY, x, i);
+
+      
+      if (leafs[i] != null){
+        tint(red,green,blue);
+        leafs[prevY] = leafs[i];
+        image(leafs[prevY].type,x-imageBaseWidth/2,i-imageBaseHeight);
+        leafs[i] = null;
+        
+        noTint();
+      }
+      
 
       prevX = x;
       prevY = i;
     }
+
+    if (leafs[height] != null){
+      leafs[height] = null;
+      console.log("Leaf Destroyed");
+    }
+
+    if (leafIntervalCounter <= 0) {
+      let img = random(leafTypes);
+      leafs[prevY] = makeLeaf(prevX, prevY, img);
+      leafIntervalCounter = randomGaussian(leafMedianInterval, 25);
+      console.log("Leaf Created");
+    } 
+
+    leafIntervalCounter --;
 
     t += speed;
 

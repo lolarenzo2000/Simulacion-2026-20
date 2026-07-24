@@ -11,3 +11,4 @@
 1. ![Iteracion 1](image.png) Ya crece pero quiero que se vea mas gruesa en la base y mas delgada en la punta.
 2. ![Iteracion 2](image-1.png) Con ayuda de claude, ahora el tallo es mas grueso en la base, antes fucionaba con la funcion ``beginshape()`` de P5js, ahora usa la funcion ``line()``
 3. ![iteracion 3](image-2.png) Color gradual para que paresca una planta infinita
+4. ![iteracion 4](image-3.png) Ya hay hojas pero no siguen el tallo
