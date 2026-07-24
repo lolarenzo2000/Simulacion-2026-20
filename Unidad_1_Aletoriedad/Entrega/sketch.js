@@ -34,16 +34,17 @@ function preload(){
 function setup() {
     createCanvas(450, 800);
     maxGrowth = height/3; // stem can grow up to the middle of the canvas
-    
+    let img = random(leafTypes);
+    leafs[prevY] = makeLeaf(prevX, prevY, img);
+    leafIntervalCounter = randomGaussian(leafMedianInterval, 25);
+    console.log("Leaf Created");   
 }
  
 function draw() {
     background(0);
-    
-    
-    
+
     let yoff = t;
-    
+
     // seed the anchor from the noise curve itself, not a hardcoded point
     let prevX = noise(yoff) * width / 8;
     let prevY = height;
@@ -64,19 +65,21 @@ function draw() {
       strokeWeight(w);
       line(prevX, prevY, x, i);
 
-      
       if (leafs[i] != null){
         tint(red,green,blue);
         leafs[prevY] = leafs[i];
         image(leafs[prevY].type,x-imageBaseWidth/2,i-imageBaseHeight);
         leafs[i] = null;
-        
         noTint();
       }
       
-
       prevX = x;
       prevY = i;
+    }
+
+    for (i = 0; i < leafs.length; i++){
+      leafs[i+1] = leafs[i];
+      leafs[i] = null;
     }
 
     if (leafs[height] != null){
