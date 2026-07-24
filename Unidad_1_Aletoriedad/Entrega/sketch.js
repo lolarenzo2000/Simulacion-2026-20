@@ -80,7 +80,7 @@ function draw() {
       console.log("Leaf Created");
     } 
 
-    leafIntervalCounter --;
+    leafIntervalCounter -= speed * 100;
 
     t += speed;
 

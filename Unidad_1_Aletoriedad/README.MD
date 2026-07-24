@@ -12,3 +12,4 @@
 2. ![Iteracion 2](image-1.png) Con ayuda de claude, ahora el tallo es mas grueso en la base, antes fucionaba con la funcion ``beginshape()`` de P5js, ahora usa la funcion ``line()``
 3. ![iteracion 3](image-2.png) Color gradual para que paresca una planta infinita
 4. ![iteracion 4](image-3.png) Ya hay hojas pero no siguen el tallo
+5. ![iteracion 5](image-4.png) las hojas siguen el tallo y estan rotadas para que se vean mejor, tambien cambian de color mientras bajan
