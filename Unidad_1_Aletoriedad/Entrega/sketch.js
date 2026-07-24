@@ -30,12 +30,12 @@ function setup() {
  
 function draw() {
     background(0);
-    noFill();
-
+    
+    tint(255,255,255);
+    image(leafs[1],width/2,height/2,500,500);
+    noTint();
     let yoff = t;
     
-
-    image(leafs[1],0,0)
     // seed the anchor from the noise curve itself, not a hardcoded point
     let prevX = noise(yoff) * width / 8 + width / 2;
     let prevY = height;
