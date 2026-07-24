@@ -22,8 +22,8 @@ let tipWeight = 2;
 let leafMedianInterval = 250;
 let leafIntervalCounter = 0;
  
-let imageBaseWidth = 64;
-let imageBaseHeight = 120;
+let imageBaseWidth = 120;
+let imageBaseHeight = 64;
 
 function preload(){
     leafTypes[0] = loadImage('assets/leaf1.png');
@@ -74,7 +74,7 @@ function draw() {
 
     if (leafIntervalCounter <= 0) {
       let img = random(leafTypes);
-      leafs[leafCounter] = makeLeaf(prevX-imageBaseWidth/2, prevY-imageBaseHeight, img);
+      leafs[leafCounter] = makeLeaf(prevX, prevY-imageBaseHeight/2, img);
       leafIntervalCounter = randomGaussian(leafMedianInterval, 10);
       leafCounter ++;
       console.log("Leaf Created");
