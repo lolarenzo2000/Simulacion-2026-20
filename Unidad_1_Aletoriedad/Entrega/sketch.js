@@ -9,6 +9,7 @@ function makeLeaf(x, y, type) {
 }
 
 let leafs = [];
+let leafCounter = 0;
 // how tall the plant currently is (starts at 0, grows toward maxGrowth)
 let growth = 0;
 let maxGrowth;
@@ -18,7 +19,7 @@ let growRate = 0.6;
 let baseWeight = 30;
 let tipWeight = 2;
 
-let leafMedianInterval = 160;
+let leafMedianInterval = 250;
 let leafIntervalCounter = 0;
  
 let imageBaseWidth = 64;
@@ -33,24 +34,21 @@ function preload(){
 
 function setup() {
     createCanvas(450, 800);
-    maxGrowth = height/3; // stem can grow up to the middle of the canvas
-    let img = random(leafTypes);
-    leafs[prevY] = makeLeaf(prevX, prevY, img);
-    leafIntervalCounter = randomGaussian(leafMedianInterval, 25);
-    console.log("Leaf Created");   
+    maxGrowth = height/3; // stem can grow up to the middle of the canvas  
 }
  
 function draw() {
+  translate(width/2,0)
     background(0);
 
     let yoff = t;
 
     // seed the anchor from the noise curve itself, not a hardcoded point
-    let prevX = noise(yoff) * width / 8;
-    let prevY = height;
+    let prevX = noise(yoff) * width / 8 ;
+    let prevY = 0;
 
     for (let i = height; i > maxGrowth; i--) {
-      let x = noise(yoff) * width / 8 + width/4;
+      let x = noise(yoff) * width / 8 ;
       yoff += 0.01;
 
       // how far up the FULL grown plant this point is (0 = base, 1 = tip)
@@ -64,22 +62,9 @@ function draw() {
       stroke(color(red,green,blue))
       strokeWeight(w);
       line(prevX, prevY, x, i);
-
-      if (leafs[i] != null){
-        tint(red,green,blue);
-        leafs[prevY] = leafs[i];
-        image(leafs[prevY].type,x-imageBaseWidth/2,i-imageBaseHeight);
-        leafs[i] = null;
-        noTint();
-      }
       
       prevX = x;
       prevY = i;
-    }
-
-    for (i = 0; i < leafs.length; i++){
-      leafs[i+1] = leafs[i];
-      leafs[i] = null;
     }
 
     if (leafs[height] != null){
@@ -89,8 +74,9 @@ function draw() {
 
     if (leafIntervalCounter <= 0) {
       let img = random(leafTypes);
-      leafs[prevY] = makeLeaf(prevX, prevY, img);
-      leafIntervalCounter = randomGaussian(leafMedianInterval, 25);
+      leafs[leafCounter] = makeLeaf(prevX-imageBaseWidth/2, prevY-imageBaseHeight, img);
+      leafIntervalCounter = randomGaussian(leafMedianInterval, 10);
+      leafCounter ++;
       console.log("Leaf Created");
     } 
 
@@ -98,9 +84,22 @@ function draw() {
 
     t += speed;
 
-    // grow slowly until reaching max height
-    if (growth < maxGrowth) {
-      growth += growRate;
+    for (let i = 0; i < leafs.length;i++){
+      if (leafs[i] != null){
+        let red = map(leafs[i].y,maxGrowth,height,150,0)
+        let green = map(leafs[i].y,maxGrowth,height,255,0)
+        let blue = map(leafs[i].y,maxGrowth,height,100,0)
+        tint(red,green,blue)
+        image(leafs[i].type,leafs[i].x,leafs[i].y)
+        noTint()
+        leafs[i].y += speed * 100;
+        if (leafs[i].y > height){
+          leafs[i] = null
+          leafCounter --;
+          leafReorder();
+          continue;
+        }        
+      }
     }
 
     if (mouseIsPressed) {
@@ -108,4 +107,15 @@ function draw() {
     } else {
       speed = 0.001;
     }
+}
+
+function leafReorder(){
+  for (let i = 0; i < leafCounter ; i++){
+    if (leafs[i] == null && leafs[i+1] != null){
+      leafs[i] = leafs[i+1];
+      leafs[i+1] = null
+    }else{
+      continue;
+    }
+  }
 }
