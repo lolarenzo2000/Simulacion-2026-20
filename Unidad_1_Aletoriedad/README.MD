@@ -14,7 +14,7 @@
 ## Entrega:
 - **Festival:** Fotosíntesis
 - **Aplicación:** Una pantalla vertical con una planta que crece de forma aleatoria (el tallo se mueve de lado a lado usando ruido Perlin), que cada tanto pone una hoja con un intervalo (usando distribución gaussiana) y usando un algoritmo de distribución uniforme para elegir la hoja que se coloca.
-- **Aplicación 2.0:** Una simulación de **Micro** exosistema de pasto.
+- **Aplicación 2.0:** Una simulación de **Micro** ecosistema simple de pasto, donde hay pájaros e interacción por el usuario.
 - **Interactividad:** cuando se hunde la pantalla la planta crece mas rápido
 
 ## Autoevaluación
