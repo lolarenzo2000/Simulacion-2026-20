@@ -30,8 +30,9 @@ Seleccioné distribución inicial aleatoria y uniforme porque quiero hacer perce
 **Cosntantes:** los signos y magnitudes exactas de la matriz de relación (quién atrae, repele o es indiferente, y con qué intensidad), el alcance de percepción de cada tipo, la fricción y velocidad máxima (iguales para los tres).
 **Variables:** la posición inicial de cada partícula, generada aleatoriamente en cada ejecución.
 
-Prototipos:
+# Prototipos:
 > Primer Prototipo: Las particulas tenian el mismo alcance y la simulacion se moria despues de un rato.
+
 > Segudno Prototipo: Las particulas ahora tienen un alcance diferente haciendo que pueda vivir mas tiempo.
 
 # Autoevaluación [Valoracion][Aporte]
