@@ -6,10 +6,29 @@
 ## Tipos de Particulas:
 - Extrovertidos: Son atraidos por todos.
 - Introvertidos: Se excluyen entre si, pero son levemente atraidos por los extrovertidos.
-- Apaticos: No quieren estar cerca de nadie.
+- Apaticos: No quiere estar cerca de alguien que socialize, y es indiferente a los de su mismo tipo.
+Seleccioné estos tres roles porque quiero hacer perceptible que la tensión entre soledad y multitud no es un espectro entre dos polos, sino un sistema de al menos tres posturas frente al contacto: buscarlo activamente (extrovertido), tolerarlo de forma condicional (introvertido), y evitarlo activamente solo cuando viene de quien socializa (apático). Espero que produzca dinámicas donde ningún tipo está simplemente "a favor" o "en contra" de la multitud, sino que cada uno la vive de forma distinta.
 ## Numero de particulas por tipo:
-el mismo
-## Matriz de intraccion
-<img width="220.5" height="211.5" alt="image" src="https://github.com/user-attachments/assets/7ac745dd-52f2-4a73-9bba-44d2e88cfdb2" />
+Seleccioné una cantidad igual para los tres tipos porque quiero hacer perceptible que ningún extremo domina numéricamente al sistema ni la multitud (extrovertidos) supera en número a la soledad (apáticos). Espero que produzca un equilibrio de fuerzas donde el resultado visual dependa de la interacción, no de la cantidad.
+## Matriz de interacción
+<img width="497" height="462" alt="image" src="https://github.com/user-attachments/assets/64adca8b-7409-4cde-89aa-de302f0f2166" />
+## Intensidad y alcance de cada relación.
+El alcanze cambiaria por grupo de particula:
+- el extrovertido podria ver mas del campo porque esta buscando hacer grupos
+- El introvertido tendria un campo menor, porque no es tan agusto empezando grupos.
+- El apatico tambien tendria un campo menor, pero seria como una zona segura.
+Con esto quiero que se vea que el extrovertido esta dispuesto a buscar, mientras que el introvertido y el apatico solo actuan cuando sale la oportunidad.
+## Distancias de interacción.
+Seleccioné un rango de interacción medio-bajo (40-100) porque quiero hacer perceptible que los encuentros son locales, no globales. 
+No existe una fuerza que domine todo el lienzo desde el principio. Espero que produzca múltiples focos de tensión simultáneos en distintas zonas del espacio, en vez de un solo evento central.
+## Fricción y velocidad máxima.
+Seleccioné fricción y velocidad máxima iguales para los tres tipos porque quiero hacer perceptible que la diferencia entre soledad y multitud no es una cuestión de "capacidad física".
+## Distribución inicial.
+Seleccioné distribución inicial aleatoria y uniforme porque quiero hacer perceptible que ningún grupo empieza favorecido. La multitud y la soledad no son condiciones de partida, son resultados que emergen de las reglas de interacción. Espero que produzca configuraciones distintas en cada corrida, manteniendo siempre la misma dinámica de fondo.
+## Parámetros constantes y variables.
+ ### Cosntantes:
+ - La atraccion entre las particulas y sus interacciones.
+ ### Variables:
+ - La Posicion inicial de las particulas
 
 
