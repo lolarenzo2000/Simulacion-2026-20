@@ -12,6 +12,7 @@ Seleccioné estos tres roles porque quiero hacer perceptible que la tensión ent
 Seleccioné una cantidad igual para los tres tipos porque quiero hacer perceptible que ningún extremo domina numéricamente al sistema ni la multitud (extrovertidos) supera en número a la soledad (apáticos). Espero que produzca un equilibrio de fuerzas donde el resultado visual dependa de la interacción, no de la cantidad.
 ## Matriz de interacción
 <img width="497" height="462" alt="image" src="https://github.com/user-attachments/assets/64adca8b-7409-4cde-89aa-de302f0f2166" />
+
 ## Intensidad y alcance de cada relación.
 El alcanze cambiaria por grupo de particula:
 - el extrovertido podria ver mas del campo porque esta buscando hacer grupos
@@ -26,9 +27,22 @@ Seleccioné fricción y velocidad máxima iguales para los tres tipos porque qui
 ## Distribución inicial.
 Seleccioné distribución inicial aleatoria y uniforme porque quiero hacer perceptible que ningún grupo empieza favorecido. La multitud y la soledad no son condiciones de partida, son resultados que emergen de las reglas de interacción. Espero que produzca configuraciones distintas en cada corrida, manteniendo siempre la misma dinámica de fondo.
 ## Parámetros constantes y variables.
- ### Cosntantes:
- - La atraccion entre las particulas y sus interacciones.
- ### Variables:
- - La Posicion inicial de las particulas
+**Cosntantes:** los signos y magnitudes exactas de la matriz de relación (quién atrae, repele o es indiferente, y con qué intensidad), el alcance de percepción de cada tipo, la fricción y velocidad máxima (iguales para los tres).
+**Variables:** la posición inicial de cada partícula, generada aleatoriamente en cada ejecución.
+
+Prototipos:
+> Primer Prototipo: Las particulas tenian el mismo alcance y la simulacion se moria despues de un rato.
+> Segudno Prototipo: Las particulas ahora tienen un alcance diferente haciendo que pueda vivir mas tiempo.
+
+# Autoevaluación [Valoracion][Aporte]
+- La intención es clara y perceptible en el comportamiento.	20%		[100] [20]
+- Los tipos, cantidades, matriz y parámetros están justificados desde la intención.	25%	[100] [25]
+- Comprendo y puedo modificar el funcionamiento técnico del sistema.	20% [100] [20]
+- El sistema produce variaciones con una identidad reconocible.	15% [100] [15]
+- Experimenté, comparé, seleccioné y descarté con criterios claros.	10% [100] [10]
+- Puedo distinguir y sustentar lo diseñado y lo emergente.	10% [100] [10]
+- total [100]
+nota = 5.0
+		
 
 
