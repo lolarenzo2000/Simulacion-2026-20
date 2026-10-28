@@ -7,6 +7,11 @@ Bitacora de clase de Simulacion 2026-20
 
 ## Unidad 5: [link](https://github.com/lolarenzo2000/PresentacionParticulas/tree/main)
 
+## Unidad 6:
+
+
+## Unidad 7: [link](https://github.com/lolarenzo2000/Embark-Letter-Toy)
+
 <img width="100" height="100" alt="image" src="https://github.com/user-attachments/assets/fbd3874c-f63a-4154-8a1e-5262f3751f2b" />
 
 
