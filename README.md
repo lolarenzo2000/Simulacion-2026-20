@@ -7,8 +7,7 @@ Bitacora de clase de Simulacion 2026-20
 
 ## Unidad 5: [link](https://github.com/lolarenzo2000/PresentacionParticulas/tree/main)
 
-## Unidad 6:
-
+## Unidad 6: [link](https://github.com/lolarenzo2000/Electric-Love/tree/main)
 
 ## Unidad 7: [link](https://github.com/lolarenzo2000/Embark-Letter-Toy)
 
